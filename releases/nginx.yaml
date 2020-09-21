@@ -1,0 +1,14 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: ghost
+  namespace: demo
+  annotations:
+    fluxcd.io/automated: "true"
+spec:
+  releaseName: ghost
+  chart:
+    git: github.com/bitnami
+    ref: master
+    path: charts/bitnami/nginx
